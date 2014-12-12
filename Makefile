@@ -23,11 +23,11 @@ DOKKU_CMD=ssh $(DOKKU_USER)@$(DOKKU_HOST)
 download_wordpress:
 	echo "Downloading Wordpress...."
 	mkdir web
-	curl -o master.zip -LOk https://github.com/WordPress/WordPress/archive/master.zip
-	unzip -q master.zip -d web
-	mv web/WordPress-master/* web
-	rm -rf web/WordPress-master
-	rm master.zip
+	curl -o latest.zip -LOk https://wordpress.org/latest.zip
+	unzip -q latest.zip -d web
+	mv web/wordpress/* web
+	rm -rf web/wordpress
+	rm latest.zip
 
 configure_wordpress:
 	cd web;../tools/create_wp_config.sh
