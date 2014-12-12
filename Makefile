@@ -1,11 +1,21 @@
 # MODIFIY THESE THREE SETTINGS
-PROJECT_NAME=wptest # will also be the Name on the dokku host
-DOKKU_HOST=d # dokku.mycompany.com or whatever
-DOKKU_USER=dokku # ussually it's dokku
-BRANCH=master # in case you have want to push something else than master
-GIT_TARGET=live # the name of the local git remote 
-VHOST=wptest.dokku.dudagroup.com # requires the domains plugins and sets the domain
+# will also be the Name on the dokku host
+PROJECT_NAME=wptest
 
+# dokku.mycompany.com or whatever
+DOKKU_HOST=d 
+
+# ussually it's dokku
+DOKKU_USER=dokku 
+
+# in case you have want to push something else than master
+BRANCH=master
+
+# the name of the local git remote 
+GIT_TARGET=live 
+
+# requires the domains plugins and sets the domain
+VHOST=wptest.dokku.dudagroup.com 
 
 # You dont have to modify anything below this line
 DOKKU_CMD=ssh $(DOKKU_USER)@$(DOKKU_HOST)
