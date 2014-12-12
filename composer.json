@@ -1,0 +1,10 @@
+{
+	"scripts": {
+            "post-install-cmd": [
+              "mv web/wp-content web/wp-content.orig"
+        ]
+    },
+  "require-dev": {
+     "heroku/heroku-buildpack-php": "*"
+  }
+}
