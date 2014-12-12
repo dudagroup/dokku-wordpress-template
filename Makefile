@@ -63,8 +63,8 @@ deploy:
 	git push $(GIT_TARGET) $(BRANCH)
 
 backup:
-	$(DOKKU_CMD) mariadb:dump $(PROJECT_NAME) > backups/mariadb_latest.sql
-	$(DOKKU_CMD) volume:dump $(PROJECT_NAME) > backups/wp-content.tar.gz
+	$(DOKKU_CMD) mariadb:dump $(PROJECT_NAME) > backup_$(PROJECT_NAME)_mariadb.sql
+	$(DOKKU_CMD) volume:dump $(PROJECT_NAME) /app/web/wp-content > backup_$(PROJECT_NAME)_wp_content.tar.gz
 
 clean:
 	rm -rf web
