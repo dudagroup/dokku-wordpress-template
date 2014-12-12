@@ -37,8 +37,6 @@ configure_domains:
 
 setup_git:
 	echo "Setting up git remotes...."
-	mkdir backups
-	echo /backups >> .gitignore
 	git init
 	git remote add $(GIT_TARGET) $(DOKKU_USER)@$(DOKKU_HOST):$(PROJECT_NAME)
 	git add .
