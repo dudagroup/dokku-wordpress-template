@@ -68,7 +68,7 @@ backup:
 
 clean:
 	rm -rf web
-	git remote remove dokku
+	git remote remove $(GIT_TARGET)
 	$(DOKKU_CMD) volume:remove $(PROJECT_NAME) /app/web/wp-content
 	$(DOKKU_CMD) mariadb:delete $(PROJECT_NAME)
 	$(DOKKU_CMD) undeploy $(PROJECT_NAME)
