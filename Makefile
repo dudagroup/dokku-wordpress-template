@@ -1,10 +1,10 @@
 # MODIFIY THESE THREE SETTINGS
-PROJECT_NAME=wptest
-DOKKU_HOST=d
-DOKKU_USER=dokku
-BRANCH=master
-GIT_TARGET=live
-VHOST=wptest.dokku.dudagroup.com
+PROJECT_NAME=wptest # will also be the Name on the dokku host
+DOKKU_HOST=d # dokku.mycompany.com or whatever
+DOKKU_USER=dokku # ussually it's dokku
+BRANCH=master # in case you have want to push something else than master
+GIT_TARGET=live # the name of the local git remote 
+VHOST=wptest.dokku.dudagroup.com # requires the domains plugins and sets the domain
 
 
 # You dont have to modify anything below this line
@@ -47,6 +47,8 @@ install: download_wordpress configure_wordpress setup_git deploy setup_dokku_vol
 	git add last_install.txt
 	git commit -am "Installation finished, redeployment imminent"
 	git push $(GIT_TARGET) $(BRANCH)
+	echo "All done! Let's wait 5s....."
+	sleep 5 # lets wait, so that the host is up
 	open http://$(VHOST)
 
 deploy:
