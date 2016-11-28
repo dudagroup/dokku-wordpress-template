@@ -1,5 +1,6 @@
-**This plugin is out of date, I highly recommend this one now days: https://github.com/dokku-community/dokku-wordpress. I'm using successfully on Dokku 7.2.
-
+########################
+This plugin is out of date, we recommend this one: https://github.com/dokku-community/dokku-wordpress. Successfully tested on Dokku 7.2.
+########################
 
 dokku-wordpress-template
 ========================
